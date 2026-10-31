@@ -15,9 +15,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Downloader TV"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/ic_wao_logo"
+        android:label="Wao IPTV Smarter Downloader"
+        android:roundIcon="@drawable/ic_wao_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.DownloaderTV">
         
@@ -25,7 +25,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape"
-            android:banner="@mipmap/ic_launcher"
+            android:banner="@drawable/ic_wao_logo"
             android:focusable="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
