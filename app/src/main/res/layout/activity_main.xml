@@ -25,7 +25,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:focusable="true"
             android:clickable="true"
-            android:padding="8" />
+            android:padding="8dp" />
 
         <ImageView
             android:id="@+id/navBrowser"
@@ -36,7 +36,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:focusable="true"
             android:clickable="true"
-            android:padding="8" />
+            android:padding="8dp" />
 
         <ImageView
             android:id="@+id/navLocalSend"
@@ -47,7 +47,7 @@
             android:background="@drawable/bg_active_icon"
             android:focusable="true"
             android:clickable="true"
-            android:padding="8" />
+            android:padding="8dp" />
 
         <ImageView
             android:id="@+id/navFiles"
@@ -58,18 +58,18 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:focusable="true"
             android:clickable="true"
-            android:padding="8" />
+            android:padding="8dp" />
 
         <ImageView
             android:id="@+id/navSettings"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="auto"
+            android:layout_marginTop="0dp"
             android:src="@android:drawable/ic_menu_manage"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:focusable="true"
             android:clickable="true"
-            android:padding="8" />
+            android:padding="8dp" />
     </LinearLayout>
 
     <!-- Right Content Area -->
@@ -79,7 +79,7 @@
         android:orientation="vertical"
         android:padding="30dp">
 
-        <!-- Top Header Bar -->
+        <!-- Top Header Bar with Wao IPTV Smarter Downloader Branding -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,13 +87,19 @@
             android:gravity="center_vertical"
             android:layout_marginBottom="20dp">
 
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_wao_logo"
+                android:layout_marginEnd="12dp" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Downloader TV"
+                android:text="Wao IPTV Smarter Downloader"
                 android:textColor="#FF6D00"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
