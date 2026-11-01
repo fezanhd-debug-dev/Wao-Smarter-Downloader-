@@ -1,37 +1,29 @@
-name: Build Android APK
+name: Build APK
 
 on:
   push:
-    branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
 
-    - name: Generate Gradle Wrapper Files
-      run: |
-        gradle wrapper --gradle-version 8.7
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.9
 
-    - name: Make gradlew executable
-      run: chmod +x gradlew
+      - name: Build debug APK
+        run: gradle assembleDebug --no-daemon --stacktrace
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
-
-    - name: Upload APK Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: wao-tv-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DownloaderTV-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
