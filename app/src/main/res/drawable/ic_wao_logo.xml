@@ -1,16 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-  
-  <!-- Background Shield/Box -->
-  <path
-      android:fillColor="#FF6D00"
-      android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
-  
-  <!-- Modern Download Arrow & Screen Icon -->
-  <path
-      android:fillColor="#FFFFFF"
-      android:pathData="M12,15l-4,-4h3V6h2v5h3L12,15zM18,18H6v-2h12V18z"/>
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <path
+        android:fillColor="#FF6B35"
+        android:pathData="M20,8h56a12,12 0 0,1 12,12v56a12,12 0 0,1 -12,12H20a12,12 0 0,1 -12,-12V20a12,12 0 0,1 12,-12z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M42,22h12v26h14L48,70L28,48h14z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,76h44v6H26z" />
 </vector>
