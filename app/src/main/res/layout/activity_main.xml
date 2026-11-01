@@ -2,240 +2,90 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="#121212"
-    android:focusable="true">
+    android:background="#1E0F08"
+    android:orientation="horizontal">
 
-    <!-- Left Sidebar Navigation -->
     <LinearLayout
-        android:layout_width="80dp"
+        android:id="@+id/sidebar"
+        android:layout_width="84dp"
         android:layout_height="match_parent"
-        android:background="#1E1E1E"
-        android:orientation="vertical"
+        android:background="#33000000"
         android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp">
-
-        <ImageView
-            android:id="@+id/navDownload"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="24dp"
-            android:src="@android:drawable/stat_sys_download"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true"
-            android:clickable="true"
-            android:padding="8dp" />
-
-        <ImageView
-            android:id="@+id/navBrowser"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="24dp"
-            android:src="@android:drawable/ic_menu_compass"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true"
-            android:clickable="true"
-            android:padding="8dp" />
-
-        <ImageView
-            android:id="@+id/navLocalSend"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginBottom="24dp"
-            android:src="@android:drawable/ic_menu_share"
-            android:background="@drawable/bg_active_icon"
-            android:focusable="true"
-            android:clickable="true"
-            android:padding="8dp" />
-
-        <ImageView
-            android:id="@+id/navFiles"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="24dp"
-            android:src="@android:drawable/ic_menu_agenda"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true"
-            android:clickable="true"
-            android:padding="8dp" />
-
-        <ImageView
-            android:id="@+id/navSettings"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="0dp"
-            android:src="@android:drawable/ic_menu_manage"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true"
-            android:clickable="true"
-            android:padding="8dp" />
-    </LinearLayout>
-
-    <!-- Right Content Area -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="30dp">
+        android:paddingTop="12dp" />
 
-        <!-- Top Header Bar with Wao IPTV Smarter Downloader Branding -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="14dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="20dp">
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/ic_wao_logo"
-                android:layout_marginEnd="12dp" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_wao_logo" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Wao IPTV Smarter Downloader"
-                android:textColor="#FF6D00"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtClock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="16:11 Tuesday"
+                android:layout_marginStart="10dp"
+                android:text="Downloader TV"
+                android:textColor="#FFB07A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txtWifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:text="IP: -"
+                android:textColor="#DDDDDD"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/headerButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:format12Hour="HH:mm"
+                android:format24Hour="HH:mm"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:background="#2C2C2C"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="8dp" />
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:format12Hour="EEE, dd MMM yyyy"
+                android:format24Hour="EEE, dd MMM yyyy"
+                android:textColor="#CCCCCC"
+                android:textSize="14sp" />
         </LinearLayout>
 
-        <!-- Main Card Section -->
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#1E1E1E"
-            android:orientation="horizontal"
-            android:padding="30dp">
-
-            <!-- Left Info Panel -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.3"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Send Apps From Any Device"
-                    android:textColor="#FFFFFF"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Phone, tablet or PC - only a web browser is needed."
-                    android:textColor="#AAAAAA"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1. On the other device, open sendtotvquick.com/send"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2. Type this code - or scan the QR instead"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3. Send a file or a message. You approve everything here."
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="24dp" />
-
-                <!-- Code Display Box -->
-                <LinearLayout
-                    android:id="@+id/layoutCodeBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_code_box"
-                    android:orientation="horizontal"
-                    android:padding="16dp"
-                    android:gravity="center_vertical"
-                    android:focusable="true"
-                    android:clickable="true">
-
-                    <TextView
-                        android:id="@+id/txtConnectionCode"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="2610-2715-3106-9205"
-                        android:textColor="#FFFFFF"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="✓ OK Copy"
-                        android:textColor="#FFFFFF"
-                        android:textSize="12sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/txtStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="⏳ Waiting for a device to connect..."
-                    android:textColor="#888888"
-                    android:textSize="14sp"
-                    android:layout_marginTop="20dp" />
-            </LinearLayout>
-
-            <!-- Right QR Panel -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.7"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imgQrCode"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:background="#FFFFFF"
-                    android:padding="8dp"
-                    android:src="@android:drawable/ic_menu_report_image" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Scan with your phone camera"
-                    android:textColor="#AAAAAA"
-                    android:textSize="12sp"
-                    android:layout_marginTop="10dp" />
-            </LinearLayout>
-        </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:layout_weight="1" />
     </LinearLayout>
-
 </LinearLayout>
